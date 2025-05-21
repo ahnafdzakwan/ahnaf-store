@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ahnaf's Store - Top Up Game</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #141414;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #283593;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 5px 15px #1a237e80;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 600;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      color: #fff;
+      text-shadow: 1px 1px 4px #000a;
+    }
+    main {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 3rem 1rem;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #1e1e2f;
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+      width: 320px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.7);
+    }
+    .logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 5px #1976d2);
+    }
+    h2 {
+      font-weight: 600;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: #82b1ff;
+      text-align: center;
+    }
+    ul.topup-options {
+      list-style: none;
+      padding: 0;
+      width: 100%;
+    }
+    ul.topup-options li {
+      background: #283593;
+      margin: 0.6rem 0;
+      padding: 0.8rem 1.2rem;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+      box-shadow: 0 3px 10px #1a237e;
+      transition: background 0.25s ease;
+    }
+    ul.topup-options li:hover {
+      background: #3f51b5;
+      box-shadow: 0 5px 15px #283593;
+    }
+    button.buy-btn {
+      background-color: #ffca28;
+      border: none;
+      padding: 0.4rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      color: #141414;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 3px 8px #c17900;
+    }
+    button.buy-btn:hover {
+      background-color: #ffa000;
+      box-shadow: 0 5px 15px #c17900;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #283593;
+      font-size: 0.9rem;
+      color: #d1d1d1;
+      box-shadow: 0 -5px 15px #1a237e80;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ahnaf's Store</h1>
+  </header>
+  <main>
+    <!-- Free Fire card -->
+    <section class="card" aria-labelledby="ff-title">
+      <img class="logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d7/Free_Fire_Logo.png/220px-Free_Fire_Logo.png" alt="Free Fire Logo" />
+      <h2 id="ff-title">Top Up Free Fire</h2>
+      <ul class="topup-options">
+        <li>
+          5 Diamond - Rp10.000
+          <button class="buy-btn" onclick="buy('Free Fire 5 Diamond', 10000)">Beli</button>
+        </li>
+        <li>
+          50 Diamond - Rp90.000
+          <button class="buy-btn" onclick="buy('Free Fire 50 Diamond', 90000)">Beli</button>
+        </li>
+        <li>
+          100 Diamond - Rp170.000
+          <button class="buy-btn" onclick="buy('Free Fire 100 Diamond', 170000)">Beli</button>
+        </li>
+      </ul>
+    </section>
+    <!-- Mobile Legends card -->
+    <section class="card" aria-labelledby="ml-title">
+      <img class="logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/5/57/Mobile_Legends_Logo.png/220px-Mobile_Legends_Logo.png" alt="Mobile Legends Logo" />
+      <h2 id="ml-title">Top Up Mobile Legends</h2>
+      <ul class="topup-options">
+        <li>
+          12 Diamonds - Rp12.000
+          <button class="buy-btn" onclick="buy('Mobile Legends 12 Diamonds', 12000)">Beli</button>
+        </li>
+        <li>
+          70 Diamonds - Rp65.000
+          <button class="buy-btn" onclick="buy('Mobile Legends 70 Diamonds', 65000)">Beli</button>
+        </li>
+        <li>
+          140 Diamonds - Rp130.000
+          <button class="buy-btn" onclick="buy('Mobile Legends 140 Diamonds', 130000)">Beli</button>
+        </li>
+      </ul>
+    </section>
+    <!-- Roblox card -->
+    <section class="card" aria-labelledby="roblox-title">
+      <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/7/77/Roblox_logo_2019.svg" alt="Roblox Logo" />
+      <h2 id="roblox-title">Top Up Roblox</h2>
+      <ul class="topup-options">
+        <li>
+          400 Robux - Rp58.000
+          <button class="buy-btn" onclick="buy('Roblox 400 Robux', 58000)">Beli</button>
+        </li>
+        <li>
+          800 Robux - Rp116.000
+          <button class="buy-btn" onclick="buy('Roblox 800 Robux', 116000)">Beli</button>
+        </li>
+        <li>
+          1700 Robux - Rp245.000
+          <button class="buy-btn" onclick="buy('Roblox 1700 Robux', 245000)">Beli</button>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    &copy; 2024 Ahnaf's Store - Semua harga dalam Rupiah (Rp)
+  </footer>
+  <script>
+    function buy(item, price) {
+      alert(`Terima kasih telah memilih:\n${item}\nHarga: Rp${price.toLocaleString('id-ID')}\n\nHarap selesaikan pembayaran sesuai prosedur.`);
+    }
+  </script>
+</body>
+</html>
+
